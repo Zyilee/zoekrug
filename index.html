@@ -56,6 +56,16 @@
             margin: 20px 0;
         }
 
+        .subnote {
+  font-family: 'Gill Sans', sans-serif;
+  font-weight: 300;   /* dünn */
+  font-size: 0.9em;   /* kleiner als Fließtext */
+  color: #666;        /* etwas heller */
+  text-align: left; /* mittig */
+  margin-top: -10px;  /* etwas näher an der Überschrift */
+  margin-bottom: 15px;
+}
+
         blockquote {
             margin: 20px 0;
             padding: 10px 20px;
@@ -66,6 +76,17 @@
             font-style: italic;
             color: #000000;
         }
+
+
+.grid-container img,
+.grid-3x2 img,
+.grid-4x3 img {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* erzwingt Quadrat */
+  object-fit: cover;     /* schneidet das Bild passend */
+  display: block;
+  margin: 0 auto;        /* zentriert */
+}
 
         .grid-container {
             display: grid;
@@ -230,6 +251,7 @@
         #lightbox img {
             max-width: 90%;
             max-height: 90%;
+            object-fit: contain;
         }
 
         #lightbox .close,
@@ -313,6 +335,9 @@
 -->
 <h2><br> analog </h2> 
 
+<p class="subnote">Klick für Vollansicht</p>
+
+
         <div class="grid-container">
               <div class="grid-item">
                 <img src="img/rauchverbot.png" alt="Rauchverbot, 2025">
@@ -361,6 +386,7 @@
         </div>
 
    <h2><br> digital </h2> 
+   <p class="subnote">Klick für Vollansicht</p>
 
         <div class="grid-container">
             <div class="grid-item">
@@ -507,7 +533,7 @@
             Mein Archiv erzählt genauso viel über mich, wie meine aktuellen Werke. Es zeigt meinen Werdegang, Studien
             und Vorgängerwerke.
         </p> -->
-
+<p class="subnote">Klick für Vollansicht</p>
         <div class="grid-4x10">
             <!-- Hier kommen alle Bilder aus Archiv mit Lightbox, wie im Original -->
             <div class="grid-item"><img src="img/photoautomat.png" alt="Photoautomat, 2024"><span>Photoautomat, 2024</span></div>
