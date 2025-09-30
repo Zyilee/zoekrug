@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zoe Krug</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fußnote</title>
-    <link rel="icon" type="image/x-icon" href="/img/modern/mädchen.png">
+    <link rel="icon" type="image/x-icon" href="img/modern/mädchen.png">
+
     <style>
         @font-face {
             font-family: 'Gill Sans';
@@ -29,7 +27,7 @@
         }
 
         body {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 0;
@@ -58,6 +56,15 @@
             margin: 20px 0;
         }
 
+        .subnote {
+  font-family: 'Gill Sans', sans-serif;
+  font-weight: 300;   /* dünn */
+  font-size: 0.9em;   /* kleiner als Fließtext */
+  color: #666;        /* etwas heller */
+  text-align: left; /* mittig */
+  margin-top: -10px;  /* etwas näher an der Überschrift */
+  margin-bottom: 15px;
+}
 
         blockquote {
             margin: 20px 0;
@@ -69,6 +76,17 @@
             font-style: italic;
             color: #000000;
         }
+
+
+.grid-container img,
+.grid-3x2 img,
+.grid-4x3 img {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* erzwingt Quadrat */
+  object-fit: cover;     /* schneidet das Bild passend */
+  display: block;
+  margin: 0 auto;        /* zentriert */
+}
 
         .grid-container {
             display: grid;
@@ -214,6 +232,55 @@
             height: 11vw;
             object-fit: cover;
         }
+    
+
+        /* Lightbox CSS */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        #lightbox .close,
+        #lightbox .prev,
+        #lightbox .next {
+            position: absolute;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            user-select: none;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px;
+        }
+
+        #lightbox .close {
+            top: 20px;
+            right: 30px;
+            font-size: 3rem;
+            transform: none;
+        }
+
+        #lightbox .prev {
+            left: 10px;
+        }
+
+        #lightbox .next {
+            right: 10px;
+        }
     </style>
 </head>
 
@@ -225,15 +292,10 @@
     </header>
 
     <main>
-
-        <p>Ich sehe meine Kunst als Spiel zwischen Klassik und Moderne. Mit Wurzeln in der Malerei und verändert in der
-            digitalen Pixelkunst, bringe ich meine Bilder auf 500x500 Pixeln auf digitales „Papier“.
-            Inspiriert von Gefühlen, meiner Kindheit, Träumen, Musik und Ästhetik des Alltags, bildet sich eine genaue
-            Komposition mit fester Perspektive und Farbe, welche ich genau so darstelle.
-            Ich arbeite mit dem provokanten Humor der heutigen Jungend, schaffe dabei meine Sichten auf Pop-Art und
+        <p> Meine Arbeit bewegt zwischen Klassik und Moderne, sich zwischen analoger und digitaler Malerei.  
+            Inspiriert von Gefühlen, meiner Kindheit, Träumen, Musik und Ästhetik des Alltags, arbeite ich mit dem provokanten Humor der heutigen Jungend, schaffe dabei meine Sichten auf Pop-Art und
             Alltagsästhetik aber interpretiere auch die Klassiker der Malerei auf konfrontierende Weise neu.
-            <br>
-            <br>
+            <br><br>
             Mit verpixelten Werken, wie ich sie schon als Kind auf Windows Paint erstellt habe, entsteht eine neue
             Ebene, die unsere Beziehung zur digitalen Ära hinterfragt und gleichzeitig ihre ästhetischen Möglichkeiten
             nutzt.
@@ -241,37 +303,99 @@
             Neue Techniken und Medien sind dabei die Antwort auf gesellschaftliche Veränderungen.
             Die Comic-artige Darstellung meiner Motive verleihen den Bildern eine spielerische Seite, die im harten
             Gegensatz zum teils „unkindlichen“ Inhalt steht.
-            <br>
-            <br>
-            Mein Ziel ist es das Leben in einen verpixelten Kontext zu setzen - fest und flüchtig zugleich, wie
+            <br><br>
+            Mein Ziel ist es das Leben in einen verpixelten Kontext zu setzen: fest und flüchtig zugleich, wie
             Erinnerungen selbst. Das Quadrat, starr und unveränderlich und genau da wo es hin soll, wird zum Symbol für
             Unvergänglichkeit der Form, währen das Verblassen der Pixel an den flüchtigen Charakter unser Erinnerungen
             erinnert.
-            <br>
-            <br>
-            Ich vereine meine drei großen Säulen des kreativen Schaffens: Malerei, digitale Kunst und Fotografie. Farbe
-            und Komposition sind meine Sprache in der nonverbalen Kommunikation. So schaffe ich eine neue Welt, aus
-            Vergangenheit, Musik, Träumen und dem alltäglichen Leben voller universellen Emotionen wie Liebe, Freude,
-            Schmerz und der Hingabe zur Ästhetik. Meine Kunst soll Spaß und Nostalgie wecken, zur Selbstreflexion
-            anregen und einen Blick in mein Inneres bieten, was so viel darüber verrät, wer ich bin und woher ich komme.
+            <br><br>
+            Die analoge Malerei bringt eine andere, körperlichere Seite meiner Arbeit hervor. Sie erlaubt mir, 
+            Materialität und Spuren des Machens sichtbar werden zu lassen. Ein Kontrast zur digitalen Präzision, 
+            aber ebenso Teil derselben Welt.
+            <br><br>
+            Ich vereine Malerei und digitale Kunst und suche nach Wegen sie miteinander zu verweben, wodurch sich gar keine richtige Grenze setzen lässt: Wo fängt die Malerei an?
+            Wo hört sie auf? Wann wird die digitale Kunst zur Illustration?
+            Ob verpixelt oder malerisch: Farbe und Komposition sind meine Sprache in der nonverbalen 
+            Kommunikation. Meine Werke sollen Spaß und Nostalgie wecken, zur Selbstreflexion anregen 
+            und zugleich einen Blick in mein Inneres eröffnen. Ein Ausdruck von Liebe, Freude, Schmerz 
+            und der Hingabe zur Ästhetik.
         </p>
 
         <blockquote>„Wenn ich es nicht 1:1 so wie in meinem Kopf ausdrücken kann, ist es auch kein gutes Bild.“
         </blockquote>
 
-        <h2> <br> Lyrics</h2>
+       <!-- <h2><br> Lyrics</h2>
         <p>
             In dieser Serie arbeite ich mit persönlichen Eindrücken, die von Musik ausgelöst wurden und bringe diese in
             Szene. Licht, Farbe, Blickwinkel und Setting spielen sich jedes Mal beim Hören des Liedes vor meinem Inneren
             Auge wieder und sind geprägt von Erinnerungen und Gefühlen. Dazu enthalten die Bilder nicht nur meine
             persönliche Assoziationen sondern spielen mit Easter Eggs, die universell von den Betrachter:innen selbst
             gefunden werden können.
-        </p>
+        </p> 
+-->
+<h2><br> analog </h2> 
+
+<p class="subnote">Klick für Vollansicht</p>
+
+
+        <div class="grid-container">
+              <div class="grid-item">
+                <img src="img/rauchverbot.png" alt="Rauchverbot, 2025">
+                <span>Rauchverbot, 2025</span>
+            </div>
+            <div class="grid-item">
+                <img src="img/schneller.png" alt="Schneller, 2025">
+                <span>Schneller, 2025</span>
+            </div>
+             <div class="grid-item">
+                <img src="img/pizza sza.png" alt="pizza scissors, 2025">
+                <span>Pizza scissors, 2025</span>
+            </div>
+             <div class="grid-item">
+                <img src="img/perlenarmband.png" alt="perlenarmband, 2025">
+                <span>Perlenarmband, 2025</span>
+            </div>
+                <div class="grid-item">
+                <img src="img/Create, Explore, Expand, Conquer.png" alt="Create, Explore, Expand, Conquer">
+                <span>Create, Explore, Expand, Conquer, 2025</span>
+            </div>
+              <div class="grid-item">
+                <img src="img/Strawberry Ice.png" alt="Strawberry Ice, 2025">
+                <span>Strawberry Ice, 2025</span>
+            </div>
+              <div class="grid-item">
+                <img src="img/Galopp.png" alt="Galopp, 2025">
+                <span>Galopp, 2025</span>
+            </div>
+              <div class="grid-item">
+                <img src="img/Hell Yeah.png" alt="Hell Yeah, 2025">
+                <span>Hell Yeah, 2025</span>
+            </div>
+            <div class="grid-item">
+                <img src="img/bleib.png" alt="Bleib, 2025">
+                <span>Bleib, 2025</span>
+            </div>
+            <div class="grid-item">
+                <img src="img/ich liebe dich nö.png" alt="Ich liebe dich nö, 2025">
+                <span>Ich liebe dich - nö, 2025</span>
+            </div>
+            <div class="grid-item">
+                <img src="img/you can see.png" alt="you can see, 2025">
+                <span>Here - you can see, 2025</span>
+            </div>
+        </div>
+
+   <h2><br> digital </h2> 
+   <p class="subnote">Klick für Vollansicht</p>
 
         <div class="grid-container">
             <div class="grid-item">
                 <img src="img/forrest gump.png" alt="Forrest Gump, 2024">
                 <span>Forrest Gump, 2024</span>
+            </div>
+             <div class="grid-item">
+                <img src="img/modern/mädchen.png" alt="Mädchen?! III, 2025">
+                <span>Mädchen?! III, 2025</span>
             </div>
             <div class="grid-item">
                 <img src="img/fake tales.png" alt="Fake Tales of San Francisco, 2023">
@@ -281,17 +405,29 @@
                 <img src="img/aus mein kopf.png" alt="Aus Mein Kopf, 2023">
                 <span>Aus Mein Kopf, 2023</span>
             </div>
-            <div class="grid-item">
-                <img src="img/took a trip to london.png" alt="Took a trip to London III, 2025">
-                <span>Took a trip to London III, 2025</span>
+             <div class="grid-item">
+                <img src="img/thinkin bout you.png" alt="Thinkin Bout You, 2022">
+                <span>Thinkin Bout You, 2022</span>
             </div>
-            <div class="grid-item">
+              <div class="grid-item">
                 <img src="img/self control.png" alt="Self Control, 2022">
                 <span>Self Control, 2022</span>
             </div>
+               <div class="grid-item">
+                <img src="img/modern/madonna.png" alt="MadOnNA, 2024">
+                <span>MadOnNA, 2024</span>
+            </div>
+              <div class="grid-item">
+                <img src="img/modern/california dreaming.png" alt="California Dreaming, 2025">
+                <span>California Dreaming, 2025</span>
+            </div>
+              <div class="grid-item">
+                <img src="img/modern/medusa.png" alt="Medusa III, 2025">
+                <span>Medusa III, 2025</span>
+            </div>
             <div class="grid-item">
-                <img src="img/thinkin bout you.png" alt="Thinkin Bout You, 2022">
-                <span>Thinkin Bout You, 2022</span>
+                <img src="img/took a trip to london.png" alt="Took a trip to London III, 2025">
+                <span>Took a trip to London III, 2025</span>
             </div>
             <div class="grid-item">
                 <img src="img/crying lightning.png" alt="Crying Lightning, 2023">
@@ -310,137 +446,21 @@
                 <span>In NY I milly rock ,2024</span>
             </div>
             <div class="grid-item">
-                <img src="img/photoautomat.png" alt="Photoautomat, 2024">
-                <span>Photoautomat, 2024</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/sundress.png" alt="Sundress, 2023">
-                <span>Sundress, 2023</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/grapejuice.png" alt="Grapejuice, 2023">
-                <span>Grapejuice, 2023</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/moshpit.png" alt="Moshpit, 2024">
-                <span>Moshpit, 2024</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/lnt.png" alt="LNT, 2024">
-                <span>LNT, 2024</span>
-            </div>
-            <div class="grid-item">
                 <img src="img/Ex Freund.png" alt="Warum macht mein Ex-Freund denn schon wieder eine Szene?, 2024">
                 <span>Warum macht mein Ex-Freund denn schon wieder eine Szene?, 2024</span>
             </div>
-            <div class="grid-item">
-                <img src="img/erstes mal.png" alt="Erstes Mal, 2024">
-                <span>Erstes Mal, 2024</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/Halt mich.png" alt="Halt mich, 2024">
-                <span>Halt mich, 2024</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/jimmy.png" alt="Jimmy Cooks, 2023">
-                <span>Jimmy Cooks, 2023</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/105.png" alt="Versuch 105, 2024">
-                <span>Versuch 105, 2024</span>
-            </div>
         </div>
 
-        <h2> <br> Klassische Moderne</h2>
+        <!--
+         <h2> <br> Klassische Moderne</h2>
         <p>Die Serie, in der ich klassische Gemälde in Pixeloptik neu interpretiere, ist eine bewusste Konfrontation mit
             dem Erbe der Kunstgeschichte. Die Reduktion auf Pixel und der Einsatz von Comic-Elementen schaffen eine
-            ironische Distanz zu der „Erhabenheit“ der Klassiker.</p>
+            ironische Distanz zu der „Erhabenheit“ der Klassiker.</p> 
 
         <div class="grid-3x2">
-            <div class="grid-item">
-                <img src="img/modern/mädchen.png" alt="Mädchen?! III, 2025">
-                <span>Mädchen?! III, 2025</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/modern/medusa.png" alt="Medusa III, 2025">
-                <span>Medusa III, 2025</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/modern/california dreaming.png" alt="California Dreaming, 2025">
-                <span>California Dreaming, 2025</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/modern/madonna.png" alt="MadOnNA, 2024">
-                <span>MadOnNA, 2024</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/modern/zauberwort.png" alt="Zauberwort, 2025">
-                <span>Zauberwort, 2025</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/modern/Cuttavaggio.png" alt="Cuttavaggio, 2024">
-                <span>Cuttavaggio, 2024</span>
-            </div>
+           
         </div>
-
-        <h2> <br> Project 125</h2>
-        <p>Die Serie zu verpixelten Fotografien spiegelt das digitale Zeitalter wider, in dem wir ständig Bilder
-            konsumieren und teilen, aber selten innehalten, um die Essenz dessen zu hinterfragen, was wir sehen. Ich
-            abstrahiere Bilder, verpixele sie gezielt, um eine Balance zwischen Schärfe und Unschärfe zu schaffen. Aus
-            der Distanz wirken sie klar, doch je näher man kommt, desto unschärfer erscheinen sie, wie verblassende
-            Erinnerungen. Diese Technik lädt Betrachter:innen ein, selbst Bedeutungen zu finden und sich mit der Frage
-            zu beschäftigen: Was bleibt? Was sehen wir? Und was verschwindet?</p>
-
-        <div class="grid-4x3">
-            <div class="grid-item">
-                <img src="img/foto/rücken.png" alt="Rücken 2025">
-                <span>Rücken, 2025</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/foto/victoria.png" alt="Victoria 2025">
-                <span>Victoria, 2025</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/foto/tauben.png" alt="Tauben 2025">
-                <span>Tauben, 2025</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/foto/pudel.png" alt="Pudel 2025">
-                <span>Pudel, 2025</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/foto/bus.png" alt="Bus 2025">
-                <span>Bus, 2025</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/foto/bmw.png" alt="BMW 2025">
-                <span>BMW, 2025</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/foto/bucht.png" alt="Bucht 2025">
-                <span>Bucht, 2025</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/foto/bridge.png" alt="Bridge 2025">
-                <span>Bridge, 2025</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/foto/park.png" alt="Park, 2025">
-                <span>Park, 2025</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/foto/Zeitung.png" alt="Zeitung, 2025">
-                <span>Zeitung, 2025</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/foto/Schick.png" alt="Schick, 2025">
-                <span>Schick, 2025</span>
-            </div>
-            <div class="grid-item">
-                <img src="img/foto/Borough.png" alt="Borough, 2025">
-                <span>Borough, 2025</span>
-            </div>
-        </div>
+        -->
 
         <h2> <br> Animationen</h2>
         <p>
@@ -508,220 +528,165 @@
             </div>
         </div>
 
-        <!-- <h2>CV</h2> -->
-
-        <!-- <div style="display: grid; grid-template-columns: 100px 1fr; gap: 20px;">
-             Linke Spalte für Jahreszahlen 
-            <div>
-                <strong>2001</strong><br>
-                <br>
-                <strong>2020-2022</strong><br>
-                <br>
-                <strong>2022</strong><br>
-                <br>
-                <strong>2023</strong><br>
-
-            </div>
-
-             Rechte Spalte für Informationen 
-            <div>
-                <p>Geboren in Mainz</p>
-                <p>Studium an der HfG Offenbach.</p>
-                <p>Studium Kommunikationsdesign an der Hochschule Mainz.</p>
-                <p>Soloausstellung "memento mori #yolo" im KunStück e.V. Mainz </p>
-                <p>Soloausstellung "Endless Summer" Caritas Mainz </p>
-            </div>
-        </div> -->
-
-
         <h2> <br> Archiv</h2>
-        <p>
+        <!-- <p>
             Mein Archiv erzählt genauso viel über mich, wie meine aktuellen Werke. Es zeigt meinen Werdegang, Studien
             und Vorgängerwerke.
-        </p>
-
+        </p> -->
+<p class="subnote">Klick für Vollansicht</p>
         <div class="grid-4x10">
-            <div class="grid-item">
-                <img src="Archiv/paperdreams (c)Zoe Krug.png" alt="Werk 1, 2025">
-                <span>Paperdreams II, Acryl auf Pappe, 70x100cm 2022</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/Luca liebt deine Mom (c)Zoe Krug.png" alt="Werk 2, 2025">
-                <span>Luca liebt deine Mom, Acryl und Wachs auf Pappe, 100x70cm 2022</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/love me like you pay me (c)Zoe Krug.jpg" alt="Werk 3, 2025">
-                <span>love me like you paid me, Acryl auf Pappe, 70x100cm 2022</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/daylight (c)Zoe Krug.jpg" alt="Werk 4, 2025">
-                <span>Daylight, Wachs auf Pappe, 70x100cm 2022</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/sunflower vol 4 (c)Zoe Krug.jpg" alt="Werk 5, 2025">
-                <span>Sunflower Vol. 4, Acryl und Wachs auf Pappe, 70x100cm 2022</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/yolo (c)Zoe Krug.jpg" alt="Werk 6, 2025">
-                <span>Yolo, Aquarell auf Pappe, 70x100cm 2022</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/blumé (c)Zoe Krug.png" alt="Werk 7, 2025">
-                <span>Blumé, Acryl auf Pappe, 70x100cm, 2022</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/Clairi (c)Zoe Krug.png" alt="Werk 8, 2025">
-                <span>Clairi, Kohle auf Pappe, 70x100cm, 2023</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/1596-1988 (c)Zoe Krug.jpg" alt="Werk 9, 2025">
-                <span>1596-1988, Acryl und Wachs auf Pappe, 70x100cm, 2022</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/1960-1988 (c)Zoe Krug.jpg" alt="Werk 10, 2025">
-                <span>Memento Mori, Acryl und Wachs auf Pappe, 70x100cm, 2022</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/Heartbreak Hotel (c)Zoe Krug.jpg" alt="Werk 11, 2025">
-                <span>Heartbreak Hotel, Kohle auf Pappe, 70x100cm, 2023</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/Änn (c)Zoe Krug.png" alt="Werk 12, 2025">
-                <span>Änn, Acryl und Wachs auf Pappe, 70x100cm, 2022</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/wash (c)Zoe Krug.png" alt="Werk 13, 2025">
-                <span>Wash, Acryl und Wachs auf Pappe, 80x100cm, 2022</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/The Morning (c)Zoe Krug.jpg" alt="Werk 14, 2025">
-                <span>The Morning, 2022</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/0k (c)Zoe Krug.png" alt="Werk 15, 2025">
-                <span>Ok, 2021</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/monstera (c)Zoe Krug.png" alt="Werk 16, 2025">
-                <span>Monstera, 2021</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/sunbath (c)Zoe Krug.png" alt="Werk 17, 2025">
-                <span>Sunbath, 2021</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/only angels (c)Zoe Krug.jpg" alt="Werk 18, 2025">
-                <span>Only Angels,Wachs auf Pappe, 100x70cm, 2022</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/essentials 1 (c)Zoe Krug.png" alt="Werk 19, 2025">
-                <span>Essentials, Acryl auf Pappe, 70x50cm, 2022</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/dice (c)Zoe Krug.jpg" alt="Werk 20, 2025">
-                <span>Dice, Kohle auf Pappe, 70x100cm, 2022</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/RAWR (c)Zoe Krug.png" alt="Werk 21, 2025">
-                <span>RAWR, Acryl auf Leinwand, 80x100cm, 2023</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/paperdreams (c)Zoe Krug.png" alt="Werk 22, 2025">
-                <span>Paperdreams I, Acryl auf Leinwand, 60x60cm 2020</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/wolke (c)Zoe Krug.png" alt="Werk 23, 2025">
-                <span>Wolke, Acryl auf Leinwand, 70x100cm, 2019</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/haha (c)Zoe Krug.jpg" alt="Werk 24, 2025">
-                <span>Haha, Acryl auf Leinwand, 100x100cm, 2023</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/medusa II (c)Zoe Krug.png" alt="Werk 25, 2025">
-                <span>Medusa II, 2023</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/mmdpor I (c)Zoe Krug.jpg" alt="Werk 26, 2025">
-                <span>Mädchen?! I, 2023</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/nobody can tell you youre not successful (c)Zoe Krug.jpg" alt="Werk 27, 2025">
-                <span>Nobody can tell you you're not successful, 2022 </span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/heartbreak anniversary (c)Zoe Krug.jpg" alt="Werk 28, 2025">
-                <span>Heartbreak anniversary, 2022</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/alcudia (c)Zoe Krug.jpg" alt="Werk 29, 2025">
-                <span>Alcudia, Acryl auf Leinwand, 70x100cm, 2021</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/pink (c)Zoe Krug.png" alt="Werk 30, 2025">
-                <span>Pink, Acryl auf Leinwand, 60x120cm, 2020</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/blue (c)Zoe Krug.jpg" alt="Werk 31, 2025">
-                <span>Blue, Acryl auf Leinwand, 60x120cm, 2020</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/watermelon sugar (c)Zoe Krug.png" alt="Werk 32, 2025">
-                <span>Watermelon Sugar, Acryl auf Leinwand, 80x80cm, 2020</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/everybody want to rule the world (c)Zoe Krug.jpg" alt="Werk 33, 2025">
-                <span>Everybody wants to rule the world, Acryl auf Leinwand, 70x100cm, 2023 </span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/skully und hitchcock (c)Zoe Krug.jpg" alt="Werk 34, 2025">
-                <span>Scully und Hitchcock, Acryl auf Leinwand, 60x80cm, 2023</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/yo picasso (c)Zoe Krug.jpg" alt="Werk 35, 2025">
-                <span>Yo, Picasso, Acryl auf Leinwand, 70x100cm, 2023</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/Deine Mutter (c)Zoe Krug.png" alt="Werk 36, 2025">
-                <span>Deine Mutter, 2023</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/nyc (c)Zoe Krug.jpg" alt="Werk 37, 2025">
-                <span>NYC, Wach auf Papier, 2021</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/BAISSES TON ATTENTES (c)Zoe Krug.png" alt="Werk 38, 2025">
-                <span>Baisse ton attentes, 2023</span>
-            </div>
-            <div class="grid-item">
-                <img src="Archiv/Zeig mal (c)Zoe Krug.jpg" alt="Werk 39, 2025">
-                <span>Zeig mal, 2023</span>
-            </div>
-            <div class="grid-item">
-                <video controls loop>
+            <!-- Hier kommen alle Bilder aus Archiv mit Lightbox, wie im Original -->
+            <div class="grid-item"><img src="img/photoautomat.png" alt="Photoautomat, 2024"><span>Photoautomat, 2024</span></div>
+            <div class="grid-item"> <img src="img/sundress.png" alt="Sundress, 2023"> <span>Sundress, 2023</span> </div>
+            <div class="grid-item"> <img src="img/grapejuice.png" alt="Grapejuice, 2023"> <span>Grapejuice, 2023</span> </div>
+            <div class="grid-item"><img src="img/modern/Cuttavaggio.png" alt="Cuttavaggio, 2024"><span>Cuttavaggio, 2024</span> </div>
+            <div class="grid-item"><img src="img/moshpit.png" alt="Moshpit, 2024"> <span>Moshpit, 2024</span> </div>
+            <div class="grid-item"><img src="img/lnt.png" alt="LNT, 2024"><span>LNT, 2024</span></div>
+            <div class="grid-item"><img src="img/modern/zauberwort.png" alt="Zauberwort, 2025"><span>Zauberwort, 2025</span></div>
+            <div class="grid-item"> <img src="img/erstes mal.png" alt="Erstes Mal, 2024"><span>Erstes Mal, 2024</span></div>
+            <div class="grid-item"><img src="img/Halt mich.png" alt="Halt mich, 2024"><span>Halt mich, 2024</span></div>
+            <div class="grid-item"><img src="img/jimmy.png" alt="Jimmy Cooks, 2023"><span>Jimmy Cooks, 2023</span></div>
+            <div class="grid-item"><img src="img/105.png" alt="Versuch 105, 2024"><span>Versuch 105, 2024</span> </div>
+            <div class="grid-item"><img src="Archiv/Paperdreams II (c)Zoe Krug.png" alt="Werk 1, 2025"><span>Paperdreams II, Acryl auf Pappe, 70x100cm 2022</span></div>
+            <div class="grid-item"><img src="Archiv/Luca liebt deine Mom (c)Zoe Krug.png" alt="Werk 2, 2025"><span>Luca liebt deine Mom, Acryl und Wachs auf Pappe, 100x70cm 2022</span></div>
+            <div class="grid-item"><img src="Archiv/love me like you pay me (c)Zoe Krug.jpg" alt="Werk 3, 2025"><span>love me like you paid me, Acryl auf Pappe, 70x100cm 2022</span></div>
+            <div class="grid-item"><img src="Archiv/daylight (c)Zoe Krug.jpg" alt="Werk 4, 2025"><span>Daylight, Wachs auf Pappe, 70x100cm 2022</span></div>
+            <div class="grid-item"><img src="Archiv/sunflower vol 4 (c)Zoe Krug.jpg" alt="Werk 5, 2025"><span>Sunflower Vol. 4, Acryl und Wachs auf Pappe, 70x100cm 2022</span></div>
+            <div class="grid-item"><img src="Archiv/yolo (c)Zoe Krug.jpg" alt="Werk 6, 2025"><span>Yolo, Aquarell auf Pappe, 70x100cm 2022</span></div>
+            <div class="grid-item"><img src="Archiv/blumé (c)Zoe Krug.png" alt="Werk 7, 2025"><span>Blumé, Acryl auf Pappe, 70x100cm, 2022</span></div>
+            <div class="grid-item"><img src="Archiv/Clairi (c)Zoe Krug.png" alt="Werk 8, 2025"><span>Clairi, Kohle auf Pappe, 70x100cm, 2023</span></div>
+            <div class="grid-item"><img src="Archiv/1596-1988 (c)Zoe Krug.jpg" alt="Werk 9, 2025"><span>1596-1988, Acryl und Wachs auf Pappe, 70x100cm, 2022</span></div>
+            <div class="grid-item"><img src="Archiv/1960-1988 (c)Zoe Krug.jpg" alt="Werk 10, 2025"><span>Memento Mori, Acryl und Wachs auf Pappe, 70x100cm, 2022</span></div>
+            <div class="grid-item"><img src="Archiv/Heartbreak Hotel (c)Zoe Krug.jpg" alt="Werk 11, 2025"><span>Heartbreak Hotel, Kohle auf Pappe, 70x100cm, 2023</span></div>
+            <div class="grid-item"><img src="Archiv/Änn (c)Zoe Krug.png" alt="Werk 12, 2025"><span>Änn, Acryl und Wachs auf Pappe, 70x100cm, 2022</span></div>
+            <div class="grid-item"><img src="Archiv/wash (c)Zoe Krug.png" alt="Werk 13, 2025"><span>Wash, Acryl und Wachs auf Pappe, 80x100cm, 2022</span></div>
+            <div class="grid-item"><img src="Archiv/The Morning (c)Zoe Krug.jpg" alt="Werk 14, 2025"><span>The Morning, 2022</span></div>
+            <div class="grid-item"><img src="Archiv/0k (c)Zoe Krug.png" alt="Werk 15, 2025"><span>Ok, 2021</span></div>
+            <div class="grid-item"><img src="Archiv/monstera (c)Zoe Krug.png" alt="Werk 16, 2025"><span>Monstera, 2021</span></div>
+            <div class="grid-item"><img src="Archiv/sunbath (c)Zoe Krug.png" alt="Werk 17, 2025"><span>Sunbath, 2021</span></div>
+            <div class="grid-item"><img src="Archiv/only angels (c)Zoe Krug.jpg" alt="Werk 18, 2025"><span>Only Angels,Wachs auf Pappe, 100x70cm, 2022</span></div>
+            <div class="grid-item"><img src="Archiv/essentials 1 (c)Zoe Krug.png" alt="Werk 19, 2025"><span>Essentials, Acryl auf Pappe, 70x50cm, 2022</span></div>
+            <div class="grid-item"><img src="Archiv/dice (c)Zoe Krug.jpg" alt="Werk 20, 2025"><span>Dice, Kohle auf Pappe, 70x100cm, 2022</span></div>
+            <div class="grid-item"><img src="Archiv/RAWR (c)Zoe Krug.png" alt="Werk 21, 2025"><span>RAWR, Acryl auf Leinwand, 80x100cm, 2023</span></div>
+            <div class="grid-item"><img src="Archiv/paperdreams (c)Zoe Krug.png" alt="Werk 22, 2025"><span>Paperdreams I, Acryl auf Leinwand, 60x60cm 2020</span></div>
+            <div class="grid-item"><img src="Archiv/wolke (c)Zoe Krug.png" alt="Werk 23, 2025"><span>Wolke, Acryl auf Leinwand, 70x100cm, 2019</span></div>
+            <div class="grid-item"><img src="Archiv/haha (c)Zoe Krug.jpg" alt="Werk 24, 2025"><span>Haha, Acryl auf Leinwand, 100x100cm, 2023</span></div>
+            <div class="grid-item"><img src="Archiv/medusa II (c)Zoe Krug.png" alt="Werk 25, 2025"><span>Medusa II, 2023</span></div>
+            <div class="grid-item"><img src="Archiv/mmdpor I (c)Zoe Krug.jpg" alt="Werk 26, 2025"><span>Mädchen?! I, 2023</span></div>
+            <div class="grid-item"><img src="Archiv/nobody can tell you youre not successful (c)Zoe Krug.jpg" alt="Werk 27, 2025"><span>Nobody can tell you you're not successful, 2022 </span></div>
+            <div class="grid-item"><img src="Archiv/heartbreak anniversary (c)Zoe Krug.jpg" alt="Werk 28, 2025"><span>Heartbreak anniversary, 2022</span></div>
+            <div class="grid-item"><img src="Archiv/alcudia (c)Zoe Krug.jpg" alt="Werk 29, 2025"><span>Alcudia, Acryl auf Leinwand, 70x100cm, 2021</span></div>
+            <div class="grid-item"><img src="Archiv/pink (c)Zoe Krug.png" alt="Werk 30, 2025"><span>Pink, Acryl auf Leinwand, 60x120cm, 2020</span></div>
+            <div class="grid-item"><img src="Archiv/blue (c)Zoe Krug.jpg" alt="Werk 31, 2025"><span>Blue, Acryl auf Leinwand, 60x120cm, 2020</span></div>
+            <div class="grid-item"><img src="Archiv/watermelon sugar (c)Zoe Krug.png" alt="Werk 32, 2025"><span>Watermelon Sugar, Acryl auf Leinwand, 80x80cm, 2020</span></div>
+            <div class="grid-item"><img src="Archiv/everybody want to rule the world (c)Zoe Krug.jpg" alt="Werk 33, 2025"><span>Everybody wants to rule the world, Acryl auf Leinwand, 70x100cm, 2023 </span></div>
+            <div class="grid-item"><img src="Archiv/skully und hitchcock (c)Zoe Krug.jpg" alt="Werk 34, 2025"><span>Scully und Hitchcock, Acryl auf Leinwand, 60x80cm, 2023</span></div>
+            <div class="grid-item"><img src="Archiv/yo picasso (c)Zoe Krug.jpg" alt="Werk 35, 2025"><span>Yo, Picasso, Acryl auf Leinwand, 70x100cm, 2023</span></div>
+            <div class="grid-item"><img src="Archiv/Deine Mutter (c)Zoe Krug.png" alt="Werk 36, 2025"><span>Deine Mutter, 2023</span></div>
+            <div class="grid-item"><img src="Archiv/nyc (c)Zoe Krug.jpg" alt="Werk 37, 2025"><span>NYC, Wach auf Papier, 2021</span></div>
+            <div class="grid-item"><img src="Archiv/BAISSES TON ATTENTES (c)Zoe Krug.png" alt="Werk 38, 2025"><span>Baisse ton attentes, 2023</span></div>
+            <div class="grid-item"><img src="Archiv/Zeig mal (c)Zoe Krug.jpg" alt="Werk 39, 2025"><span>Zeig mal, 2023</span></div>
+            <div class="grid-item"><video controls loop>
                     <source src="Archiv/mach ma ringe II (c)Zoe Krug.mp4.mp4" type="video/mp4">
                     Dein Browser unterstützt dieses Videoformat nicht.
-                </video>
-                <span>Mach mal Ringe, 2023</span>
-            </div>
+                </video><span>Mach mal Ringe, 2023</span></div>
+        </div>
         </div>
 
-        <h2> <br> Kontakt</h2>
+        <h2> <br> CV</h2>
+        <div style="display: grid; grid-template-columns: 1fr 3fr; gap: 10px;">
+
+             <div>2025</div>
+            <div>DAS HAUS e.V. Gruppenausstellung</div>
+
+            <div>2023</div>
+            <div>Auszeichnung: Art and Technology, f e u i l l e t o n . Magazin</div>
+
+            <div>2023</div>
+            <div>Soloausstellung "endless summer", Caritas Mainz</div>
+
+            <div>2023</div>
+            <div>Teilnahme PART. Mainz</div>
+
+            <div>2023</div>
+            <div>Soloausstellung "memento Mori #yolo", KunStück e.V. Mainz</div>
+
+            <div>2022</div>
+            <div>Studium Kommunikationsdesign Hochschule Mainz</div>
+
+            <div>2020-2022</div>
+            <div>Studium Hochschule für Gestaltung Offenbach am Main</div>
+
+            <div>2001</div>
+            <div>Geboren in Mainz</div>
+        </div>
+        
+
+        <h2> <br>Kontakt</h2>
         <footer style="margin-top: 30px; text-align: left;">
             <a href="mailto:zoe.l.krug@gmail.com">zoe.l.krug@gmail.com</a> <br>
             <a href="https://www.instagram.com/z0e4" target="_blank">@z0e4</a>
-            <br>
             <p> ©2025 Zoe Krug</p>
-            </p>
-
-            <h2> <br>Impressum </h2>
-            <p> Angaben gemäß § 5 TMG <br>
-                Zoe Krug, Osteinstraße 4, 55118 Mainz <br>
-                06131 338338, zoe.l.krug@gmail.com </p>
+        </footer>
+           
+         <h2> Impressum </h2>
+         <footer style="margin-top: 30px; text-align: center;"></footer>
+         <p> Angaben gemäß § 5 TMG <br>
+            Zoe Krug, Osteinstraße 4, 55118 Mainz <br>
+             0176 37691916, zoe.l.krug@gmail.com </p>
         </footer>
 
+    </main>
 
+    <!-- Lightbox HTML -->
+        <div id="lightbox">
+            <span class="close">&times;</span>
+            <span class="prev">&#10094;</span>
+            <img src="">
+            <span class="next">&#10095;</span>
+        </div>
+
+        <!-- Lightbox JavaScript -->
+        <script>
+            const images = document.querySelectorAll('.grid-container img, .grid-3x2 img, .grid-4x2 img, .grid-4x10 img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            const closeBtn = lightbox.querySelector('.close');
+            const prevBtn = lightbox.querySelector('.prev');
+            const nextBtn = lightbox.querySelector('.next');
+
+            let currentIndex = 0;
+
+            images.forEach((img, index) => {
+                img.addEventListener('click', () => {
+                    currentIndex = index;
+                    lightbox.style.display = 'flex';
+                    lightboxImg.src = images[currentIndex].src;
+                });
+            });
+
+            function showPrev() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                lightboxImg.src = images[currentIndex].src;
+            }
+
+            function showNext() {
+                currentIndex = (currentIndex + 1) % images.length;
+                lightboxImg.src = images[currentIndex].src;
+            }
+
+            closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
+            prevBtn.addEventListener('click', showPrev);
+            nextBtn.addEventListener('click', showNext);
+
+            document.addEventListener('keydown', e => {
+                if (lightbox.style.display === 'flex') {
+                    if (e.key === 'ArrowLeft') showPrev();
+                    if (e.key === 'ArrowRight') showNext();
+                    if (e.key === 'Escape') lightbox.style.display = 'none';
+                }
+            });
+        </script>
     </main>
 </body>
-
 </html>
